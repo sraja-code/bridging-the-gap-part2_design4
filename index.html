@@ -13,7 +13,7 @@ background:radial-gradient(130% 110% at 50% 12%,#faf4e6 0%,#f5edda 46%,#ece1c8 1
 #cover.gone{opacity:0;transform:scale(.98) translateY(-10px);pointer-events:none}
 .book{position:relative;width:100%;max-width:720px;background:linear-gradient(180deg,#fbf6ea,#f6eed9);border:1px solid var(--line);border-radius:6px;
 box-shadow:0 1px 0 #fffaf0 inset,0 30px 70px -30px rgba(60,40,15,.5),0 12px 26px -18px rgba(60,40,15,.42);
-padding:clamp(2.4rem,6vw,3.8rem) clamp(1.6rem,6vw,3.4rem) 0;overflow:hidden;text-align:center;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+padding:clamp(2.6rem,6.5vw,4.2rem) clamp(1.6rem,6vw,3.4rem) clamp(1.6rem,5vw,2.4rem);overflow:hidden;text-align:center;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .frame{position:absolute;inset:14px;border:1px solid rgba(184,145,47,.5);border-radius:3px;pointer-events:none}
 .frame::before{content:'';position:absolute;inset:5px;border:1px solid rgba(184,145,47,.24);border-radius:2px}
@@ -23,7 +23,7 @@ padding:clamp(2.4rem,6vw,3.8rem) clamp(1.6rem,6vw,3.4rem) 0;overflow:hidden;text
 .univ-rule{width:52px;height:2px;background:var(--gold);margin:1rem auto 1.6rem;transform-origin:center;animation:grow 1s .5s both}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .series{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.6rem,6.1vw,2.95rem);color:var(--coffee);letter-spacing:-.01em;margin-bottom:.1rem;animation:fade 1s .3s both;white-space:nowrap}
-.cover-art-wrap{position:relative;width:min(74%,270px);margin:.3rem auto .4rem;display:flex;align-items:center;justify-content:center}
+.cover-art-wrap{position:relative;width:min(86%,330px);margin:.6rem auto .8rem;display:flex;align-items:center;justify-content:center}
 .cover-art-wrap::before{content:'';position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle,rgba(184,145,47,.16) 0%,rgba(184,145,47,0) 70%);animation:fade 1.2s .2s both}
 .cover-art{width:100%;height:auto;display:block;animation:fade 1s .26s both}
 .orbit-ring{transform-origin:150px 140px;animation:spin 26s linear infinite}
@@ -1381,10 +1381,11 @@ function goNav(id){toggleNav(false);open_(id);}
 
 function enter(){
   var cov=document.getElementById('cover');
-  cov.classList.add('gone');
   var rd=document.getElementById('reader');
+  cov.classList.add('gone');
   rd.hidden=false;
-  setTimeout(function(){cov.style.display='none';open_('team');},450);
+  open_('team');
+  setTimeout(function(){cov.style.display='none';},650);
 }
 function showChapter(idFrag){
   var chs=document.querySelectorAll('.chapter');
